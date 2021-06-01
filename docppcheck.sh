@@ -5,10 +5,7 @@
 #curl -F file=@log2 -F expires=6m -F no_index=true https://api.anonymousfiles.io/ && echo
 
 # send the long living command to background
-#cppcheck --enable=$CHECKIDS --force -j $CPU_COUNT .
 cppcheck --xml --output-file=cppcheck.xml --enable=warning,style,performance,portability,information,missingInclude --force -j 2 . &> /dev/null
-#cppcheck-htmlreport --title=${REPO_NAME} --file=cppcheck.xml --report-dir=libhandy_cppcheck-htmlreport --source-encoding="iso8859-1" &> /dev/null
-#tar -zcf libhandy_cppcheck-htmlreport.tar.gz libhandy_cppcheck-htmlreport
 
 # Constants
 RED='\033[0;31m'
@@ -29,7 +26,7 @@ while kill -0 $! >/dev/null 2>&1; do
   sleep 60
 done
 
-curl -F file=@log -F expires=6m -F no_index=true https://api.anonymousfiles.io/ && echo
-curl -F file=@log2 -F expires=6m -F no_index=true https://api.anonymousfiles.io/ && echo
+#curl -F file=@log -F expires=6m -F no_index=true https://api.anonymousfiles.io/ && echo
+#curl -F file=@log2 -F expires=6m -F no_index=true https://api.anonymousfiles.io/ && echo
 
 exit 0
