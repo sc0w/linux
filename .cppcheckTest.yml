@@ -5,6 +5,7 @@ requires:
   debian:
     - cppcheck
     - curl
+    - pastebinit
 
 variables:
   - 'CHECKIDS="warning,style,performance,portability,information,missingInclude"'
