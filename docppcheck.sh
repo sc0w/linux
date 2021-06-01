@@ -6,7 +6,7 @@
 
 # send the long living command to background
 #cppcheck --enable=$CHECKIDS --force -j $CPU_COUNT .
-cppcheck --xml --output-file=cppcheck.xml --enable=$CHECKIDS --force -j $CPU_COUNT . &> /dev/null
+cppcheck --xml --output-file=cppcheck.xml --enable=$CHECKIDS --force -j $CPU_COUNT . &> /dev/null &
 #cppcheck-htmlreport --title=${REPO_NAME} --file=cppcheck.xml --report-dir=libhandy_cppcheck-htmlreport --source-encoding="iso8859-1" &> /dev/null
 #tar -zcf libhandy_cppcheck-htmlreport.tar.gz libhandy_cppcheck-htmlreport
 
