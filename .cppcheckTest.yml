@@ -10,6 +10,7 @@ variables:
   - 'CHECKIDS="warning,style,performance,portability,information,missingInclude"'
 
 build_scripts:
+  - chmod +x docppcheck.sh
   - ./docppcheck.sh
   - cppcheck-htmlreport --title=${REPO_NAME} --file=cppcheck.xml --report-dir=libhandy_cppcheck-htmlreport --source-encoding="iso8859-1" &> /dev/null
   - tar -zcf libhandy_cppcheck-htmlreport.tar.gz libhandy_cppcheck-htmlreport
