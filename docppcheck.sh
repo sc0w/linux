@@ -5,7 +5,7 @@
 #curl -F file=@log2 -F expires=6m -F no_index=true https://api.anonymousfiles.io/ && echo
 
 # send the long living command to background
-cppcheck --xml --output-file=cppcheck.xml --enable=warning,style,performance,portability,information,missingInclude --force -j 2 . &> /dev/null
+cppcheck --xml --output-file=cppcheck.xml --enable=warning,style,performance,portability,information,missingInclude --force -j 2 . | pastebinit
 
 # Constants
 RED='\033[0;31m'
