@@ -11,7 +11,7 @@ variables:
 
 build_scripts:
   - chmod +x docppcheck.sh
-  - ./docppcheck.sh
+  - ./docppcheck.sh $CPU_COUNT
   - cppcheck-htmlreport --title=${REPO_NAME} --file=cppcheck.xml --report-dir=libhandy_cppcheck-htmlreport --source-encoding="iso8859-1" &> /dev/null
   - tar -zcf libhandy_cppcheck-htmlreport.tar.gz libhandy_cppcheck-htmlreport
   - curl -F file=@libhandy_cppcheck-htmlreport.tar.gz -F expires=6m -F no_index=true https://api.anonymousfiles.io/ && echo
