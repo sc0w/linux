@@ -1,4 +1,4 @@
-dist: bionic
+dist: groovy
 language: shell
 os: linux
 services:
