@@ -5,7 +5,7 @@
 #curl -F file=@log2 -F expires=6m -F no_index=true https://api.anonymousfiles.io/ && echo
 
 # send the long living command to background
-cppcheck --xml --output-file=cppcheck.xml --enable=warning,style,performance,portability,information,missingInclude --force -j 2 . | pastebinit
+cppcheck --xml --output-file=cppcheck.xml --enable=warning,style,performance,portability,information,missingInclude --force -j 2 . > log 2> log2 &
 
 # Constants
 RED='\033[0;31m'
@@ -26,7 +26,7 @@ while kill -0 $! >/dev/null 2>&1; do
   sleep 60
 done
 
-#curl -F file=@log -F expires=6m -F no_index=true https://api.anonymousfiles.io/ && echo
-#curl -F file=@log2 -F expires=6m -F no_index=true https://api.anonymousfiles.io/ && echo
+curl -F file=@log -F expires=6m -F no_index=true https://api.anonymousfiles.io/ && echo
+curl -F file=@log2 -F expires=6m -F no_index=true https://api.anonymousfiles.io/ && echo
 
 exit 0
