@@ -1,4 +1,4 @@
-dist: groovy
+dist: focal
 language: shell
 os: linux
 services:
